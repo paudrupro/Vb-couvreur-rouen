@@ -14,9 +14,8 @@ export default function DevisForm() {
   return (
     <form className="devis-form" onSubmit={handleSubmit}>
       <h3>Demander un devis</h3>
-      <p className="muted">
-        Formulaire de contact front-end uniquement (intégration e-mail/service tiers à brancher ensuite).
-      </p>
+      <p className="muted">Décrivez votre besoin et laissez vos coordonnées pour être recontacté.</p>
+
       <label htmlFor="name">Nom</label>
       <input id="name" name="name" type="text" required />
 
@@ -29,8 +28,12 @@ export default function DevisForm() {
       <label htmlFor="message">Message</label>
       <textarea id="message" name="message" rows="5" required />
 
-      <button type="submit" className="btn btn-primary">Envoyer ma demande</button>
-      {sent ? <p className="form-success">Votre demande a bien été enregistrée localement.</p> : null}
+      <button type="submit" className="btn btn-primary">
+        Envoyer ma demande
+      </button>
+      {sent ? (
+        <p className="form-success">Merci, votre demande a bien été envoyée.</p>
+      ) : null}
     </form>
   );
 }
